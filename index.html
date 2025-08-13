@@ -1,0 +1,2210 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Tushar Rasal | AI & Generative AI Expert</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom CSS for features not covered by Tailwind */
+        .typewriter {
+            overflow: hidden;
+            border-right: .15em solid #8b5cf6;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #8b5cf6; }
+        }
+
+        .skill-bar {
+            transition: width 1.5s ease-in-out;
+        }
+
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .flip-card {
+            perspective: 1000px;
+        }
+
+        .flip-card-inner {
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front, .flip-card-back {
+            backface-visibility: hidden;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .flip-card-back {
+            transform: rotateY(180deg);
+        }
+
+        .dark-mode {
+            background-color: #0f172a;
+            color: #f1f5f9;
+        }
+
+        .dark-mode .bg-white {
+            background-color: #1e293b;
+        }
+
+        .dark-mode .text-gray-800 {
+            color: #f1f5f9;
+        }
+
+        .dark-mode .border-gray-200 {
+            border-color: #334155;
+        }
+
+        .cursor-trail {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background-color: rgba(139, 92, 246, 0.5);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+        }
+
+        .particles-js-canvas-el {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #8b5cf6, #06b6d4, #10b981);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: gradient 3s ease infinite;
+            background-size: 300% 300%;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .pulse-ring {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px solid rgba(139, 92, 246, 0.5);
+            animation: pulse-ring 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+        }
+
+        @keyframes pulse-ring {
+            0% { transform: scale(0.8); opacity: 1; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+
+        .glow {
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+        }
+
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #8b5cf6, transparent);
+            margin: 4rem 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -10px;
+            width: 20px;
+            height: 20px;
+            background: #8b5cf6;
+            border-radius: 50%;
+            border: 4px solid #0f172a;
+            z-index: 1;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -5px;
+            width: 10px;
+            height: 10px;
+            background: #0f172a;
+            border-radius: 50%;
+            z-index: 2;
+        }
+
+        .skill-tag {
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(139, 92, 246, 0.3);
+        }
+
+        .project-tag {
+            transition: all 0.3s ease;
+        }
+
+        .project-tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 3px 10px rgba(16, 185, 129, 0.3);
+        }
+
+        .certificate-card {
+            transition: all 0.3s ease;
+        }
+
+        .certificate-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .stats-card {
+            transition: all 0.3s ease;
+        }
+
+        .stats-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .parallax {
+            transform: translateZ(-1px) scale(1.1);
+        }
+
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .neon-text {
+            text-shadow: 0 0 5px #8b5cf6, 0 0 10px #8b5cf6, 0 0 15px #8b5cf6, 0 0 20px #8b5cf6;
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .dark .glass-effect {
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+        }
+
+        /* Dark mode overrides */
+        .dark body {
+            background: linear-gradient(135deg, #0f172a, #1e293b, #0f172a);
+        }
+
+        .dark .bg-gradient-to-br {
+            background: linear-gradient(135deg, #0f172a, #1e293b, #0f172a);
+        }
+
+        .dark .text-gray-300 {
+            color: #cbd5e1;
+        }
+
+        .dark .text-gray-400 {
+            color: #94a3b8;
+        }
+
+        .dark .text-gray-500 {
+            color: #64748b;
+        }
+
+        .dark .border-white\/20 {
+            border-color: rgba(148, 163, 184, 0.2);
+        }
+
+        .dark .bg-white\/10 {
+            background: rgba(30, 41, 59, 0.5);
+        }
+
+        .dark .bg-white\/20 {
+            background: rgba(30, 41, 59, 0.7);
+        }
+
+        .dark .hover\:bg-white\/20:hover {
+            background: rgba(30, 41, 59, 0.8);
+        }
+
+        .dark .hover\:bg-white\/30:hover {
+            background: rgba(30, 41, 59, 0.9);
+        }
+
+        .dark .hover\:bg-purple-500\/20:hover {
+            background: rgba(139, 92, 246, 0.2);
+        }
+
+        .dark .hover\:bg-purple-600\/10:hover {
+            background: rgba(139, 92, 246, 0.1);
+        }
+
+        .dark .hover\:text-purple-300:hover {
+            color: #c4b5fd;
+        }
+
+        .dark .text-gray-200 {
+            color: #e2e8f0;
+        }
+
+        .dark .bg-gray-700 {
+            background: #334155;
+        }
+
+        .dark .border-gray-700 {
+            border-color: #334155;
+        }
+
+        .dark .bg-slate-900 {
+            background: #0f172a;
+        }
+
+        .dark .bg-slate-800\/80 {
+            background: rgba(30, 41, 59, 0.8);
+        }
+
+        .dark .border-white\/10 {
+            border-color: rgba(148, 163, 184, 0.1);
+        }
+
+        .dark .text-white {
+            color: #f8fafc;
+        }
+
+        .dark .text-gray-800 {
+            color: #f1f5f9;
+        }
+
+        .dark .bg-white {
+            background: #1e293b;
+        }
+
+        .dark input, .dark textarea {
+            background: rgba(30, 41, 59, 0.5);
+            border-color: rgba(148, 163, 184, 0.2);
+            color: #f1f5f9;
+        }
+
+        .dark .certificate-card {
+            background: rgba(30, 41, 59, 0.5);
+        }
+
+        .dark .project-card {
+            background: rgba(30, 41, 59, 0.5);
+        }
+
+        .dark .stats-card {
+            background: rgba(30, 41, 59, 0.5);
+        }
+
+        .dark .timeline-item::before {
+            background: #8b5cf6;
+            border: 4px solid #0f172a;
+        }
+
+        .dark .timeline-item::after {
+            background: #0f172a;
+        }
+
+        .dark .skill-tag {
+            background: rgba(30, 41, 59, 0.5);
+        }
+
+        .dark .project-tag {
+            background: rgba(16, 185, 129, 0.1);
+            color: #6ee7b7;
+        }
+
+        .dark .bg-purple-500\/30 {
+            background: rgba(139, 92, 246, 0.3);
+        }
+
+        .dark .bg-white\/20 {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .dark .text-gray-200 {
+            color: #e2e8f0;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 font-sans antialiased transition-colors duration-300">
+    <!-- Cursor Trail -->
+    <div id="cursor-trail" class="cursor-trail"></div>
+
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/10 backdrop-blur-md shadow-sm z-50 dark:bg-slate-800/80 dark:text-white border-b border-white/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="text-xl font-bold gradient-text">Dr. Tushar Rasal</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-200 hover:text-purple-300 transition">Home</a>
+                    <a href="#about" class="text-gray-200 hover:text-purple-300 transition">About</a>
+                    <a href="#skills" class="text-gray-200 hover:text-purple-300 transition">Skills</a>
+                    <a href="#experience" class="text-gray-200 hover:text-purple-300 transition">Experience</a>
+                    <a href="#projects" class="text-gray-200 hover:text-purple-300 transition">Projects</a>
+                    <a href="#certificates" class="text-gray-200 hover:text-purple-300 transition">Certificates</a>
+                    <a href="#contact" class="text-gray-200 hover:text-purple-300 transition">Contact</a>
+                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-white/20 transition">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:block"></i>
+                    </button>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="p-2 rounded-md hover:bg-white/20 transition">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white/20 dark:bg-slate-800/80 backdrop-blur-md shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-purple-300 hover:bg-white/20">Home</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-purple-300 hover:bg-white/20">About</a>
+                <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-purple-300 hover:bg-white/20">Skills</a>
+                <a href="#experience" class="block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-purple-300 hover:bg-white/20">Experience</a>
+                <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-purple-300 hover:bg-white/20">Projects</a>
+                <a href="#certificates" class="block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-purple-300 hover:bg-white/20">Certificates</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-purple-300 hover:bg-white/20">Contact</a>
+                <button id="theme-toggle-mobile" class="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-purple-300 hover:bg-white/20">
+                    <span class="flex items-center">
+                        <i class="fas fa-moon dark:hidden mr-2"></i>
+                        <i class="fas fa-sun hidden dark:block mr-2"></i>
+                        Toggle Theme
+                    </span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center pt-16 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-purple-900/50 via-transparent to-cyan-900/50"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="text-center lg:text-left">
+                    <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+                        Transforming Data Into <span class="gradient-text">Intelligent AI Solutions</span>
+                    </h1>
+                    <div class="typewriter text-2xl md:text-3xl font-semibold text-purple-200 mb-8">
+                        AI Researcher & Lead Scientist 
+                    </div>
+                    <p class="text-lg text-gray-300 mb-8 max-w-2xl">
+                        Specializing in Generative AI, Agentic AI, LLMs, Computer Vision, and Deep Learning with 9.5+ years of experience driving cutting-edge AI innovations.
+                    </p>
+                    <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
+                        <a href="#projects" class="px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-full hover:from-purple-700 hover:to-indigo-700 transition shadow-lg hover:shadow-xl glow">
+                            View My Work
+                        </a>
+                        <a href="#contact" class="px-8 py-4 border-2 border-purple-500 text-purple-300 rounded-full hover:bg-purple-500/10 transition">
+                            Get In Touch
+                        </a>
+                    </div>
+                    <div class="mt-8 flex justify-center lg:justify-start space-x-6">
+                        <a href="https://www.linkedin.com/in/tushar-rasal-phd" class="text-gray-300 hover:text-purple-300 transition transform hover:scale-110">
+                            <i class="fab fa-linkedin text-2xl"></i>
+                        </a>
+                        <a href="https://github.com/drtusharrasal" class="text-gray-300 hover:text-purple-300 transition transform hover:scale-110">
+                            <i class="fab fa-github text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-purple-300 transition transform hover:scale-110">
+                            <i class="fab fa-twitter text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-purple-300 transition transform hover:scale-110">
+                            <i class="fab fa-kaggle text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="relative flex justify-center">
+                    <div class="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 mx-auto">
+                        <div class="absolute inset-0 bg-gradient-to-r from-purple-600 to-cyan-500 rounded-full opacity-30 blur-xl animate-pulse"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="relative">
+                                <div class="pulse-ring"></div>
+                                <div class="pulse-ring" style="animation-delay: 0.5s;"></div>
+                                <div class="pulse-ring" style="animation-delay: 1s;"></div>
+                            </div>
+                        </div>
+                        <img src="https://1drv.ms/i/c/3b7c2c29ac9eddd9/IQR-nkP3tAyDRp58W6oIiSDLAZByXbhLf4IkxHpfIIZl7-U" 
+                             alt="Dr. Tushar Rasal" 
+                             class="relative w-full h-full object-cover rounded-full border-4 border-white/30 shadow-2xl floating">
+                    </div>
+                    <div class="absolute -bottom-4 -right-4 bg-gradient-to-r from-green-500 to-emerald-500 p-3 rounded-full shadow-lg">
+                        <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center text-green-600 animate-pulse">
+                            <i class="fas fa-check text-2xl"></i>
+                        </div>
+                        <span class="absolute -bottom-2 -right-2 bg-purple-600 text-white text-xs px-2 py-1 rounded-full">Available</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-12 bg-white/10 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                
+                <div class="stats-card bg-white/10 p-6 rounded-xl text-center glass-effect">
+                    <div class="text-3xl font-bold text-purple-300 mb-2">9.5+</div>
+                    <div class="text-gray-300">Years Experience</div>
+                </div>
+                <div class="stats-card bg-white/10 p-6 rounded-xl text-center glass-effect">
+                    <div class="text-3xl font-bold text-purple-300 mb-2">55+</div>
+                    <div class="text-gray-300">Certifications</div>
+                </div>
+                <div class="stats-card bg-white/10 p-6 rounded-xl text-center glass-effect">
+                    <div class="text-3xl font-bold text-purple-300 mb-2">22+</div>
+                    <div class="text-gray-300">Projects</div>
+                </div>
+                <div class="stats-card bg-white/10 p-6 rounded-xl text-center glass-effect">
+                    <div class="text-3xl font-bold text-purple-300 mb-2">10+</div>
+                    <div class="text-gray-300">Patents and Publications</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">About Me</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="relative">
+                    <div class="bg-white/10 p-8 rounded-2xl glass-effect">
+                        <h3 class="text-2xl font-semibold text-white mb-6">Who I Am</h3>
+                        <p class="text-gray-300 mb-6 leading-relaxed">
+                            Lead Data Scientist with 9.5+ years of experience in Generative AI, Agentic AI, LLMs, Computer Vision, and Deep Learning. 
+                            Specialized in developing cutting-edge AI solutions with real-world business impact.
+                        </p>
+                        <p class="text-gray-300 mb-6 leading-relaxed">
+                            Expert in RAG frameworks, prompt engineering, few-shot/zero-shot techniques, fine-tuning, and deploying LLMs in production-ready, scalable pipelines across cloud platforms (AWS, GCP, Azure). Experienced in designing Agentic AI systems and orchestrating multi-agent workflows for autonomous decision-making. 
+                            Committed to continuous growth with 55+ industry certifications in AI and Data Science.
+                        </p>
+                        <p class="text-gray-300 leading-relaxed">
+                            
+                            Published papers with multiple patents, SCI-indexed publications in AI, deep learning, and machine learning in global research competitions. Holds 55+ industry certifications in Generative AI, NLP, Data Science, Deep Learning, and Computer Vision, with hands-on expertise in Python development, ML/DL frameworks, APIs, and database integration.
+                        </p>
+                    </div>
+                    <div class="absolute -z-10 -inset-2 bg-gradient-to-r from-purple-600 to-cyan-500 rounded-2xl opacity-20 blur-md"></div>
+                </div>
+                
+                <div>
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-semibold text-white mb-6">My Experience</h3>
+                        <div class="space-y-8 relative pl-8 border-l-2 border-purple-500/30">
+                            <div class="timeline-item relative pl-8">
+                                <h4 class="text-xl font-medium text-purple-300">Lead Decision Scientist</h4>
+                                <p class="text-gray-400">Winmore - Bangalore, India • 2024 - Present</p>
+                                <p class="text-gray-300 mt-2">Leading Generative AI applications with Text generation, Q&A, and LLMs on AWS cloud platform.Deployed and managed AI/ML models on AWS Bedrock, Lambda, and related services with end-to-end pipelines. Led AI and Data Science projects applying LLMs and advanced ML to drive business transformation.</p>
+                            </div>
+                            <div class="timeline-item relative pl-8">
+                                <h4 class="text-xl font-medium text-purple-300">Data Scientist</h4>
+                                <p class="text-gray-400">Persistent Systems Limited - Pune, India • 2023 - 2024</p>
+                                <p class="text-gray-300 mt-2">Worked on Generative AI applications on Microsoft Azure involving text generation, Q&A, summarization, NER, VectorDB, RAG, and fine-tuning LLMs using LangChain and LlamaIndex for multiple PoCs.
+                                    Architected and implemented GenAI solutions for medical imaging, text analytics, NLP, and synthetic data generation (image-to-image, image-to-text).
+                                    Researched and integrated the latest advancements in Generative AI, ML, NLP, and deep learning into products and services.</p>
+                            </div>
+                            <div class="timeline-item relative pl-8">
+                                <h4 class="text-xl font-medium text-purple-300">Data Scientist</h4>
+                                <p class="text-gray-400">Sony Research, India (SRI) - Bangalore • 2022 - 2023</p>
+                                <p class="text-gray-300 mt-2">Developed an advanced chatbot framework integrating GPT-based LLMs for natural language understanding, backend integration, and seamless data processing, with two USA patents filed in SRI and top rankings in research competitions.
+                                    Expertise spans LLMs (ChatGPT, LLaMA2, Mistral7B), fine-tuning, prompt engineering, RAG, vector databases, diffusion models, transformers, and computer vision tasks like detection, segmentation, and OCR.
+                                    Hands-on with Azure, AWS, GCP, and tools such as LangChain, HuggingFace, OpenCV, TensorFlow, and Keras, applying deep learning, NLP, and GenAI across diverse applications.
+                                    </p>
+                            </div>
+                            <div class="timeline-item relative pl-8">
+                                <h4 class="text-xl font-medium text-purple-300">Doctoral Researcher in Data Science (Ph.D)</h4>
+                                <p class="text-gray-400">National Institute Of Technology, Goa, India • Jan 2021 - Jan 2023</p>
+                                <p class="text-gray-300 mt-2">Developed and implemented deep learning algorithms (CNNs, U-Net, ViT, GANs, Latent Diffusion) for image/video processing, segmentation, classification, and cancer detection.
+                                    Published five novel image processing algorithms in SCI journals.
+                                    Skills: Deep Learning, ML, CNNs, NLP, TensorFlow, Scikit-Learn, Python, Vertex AI, Generative AI.</p>
+                            </div>
+                            
+                            <div class="timeline-item relative pl-8">
+                                <h4 class="text-xl font-medium text-purple-300">Junior Research Fellow (JRF)</h4>
+                                <p class="text-gray-400">National Institute Of Technology, Goa, India • Jan 2018 - Jan 2020</p>
+                                <p class="text-gray-300 mt-2">Worked on image and video processing with deep neural networks, CNNs, U-Net, ViT, GAN, and Latent Diffusion. Implemented algorithms for image restoration, classification, and segmentation, publishing results in SCI-indexed journals. Skills: Deep Learning, Machine Learning, CNNs, NLP, TensorFlow, Keras, OpenCV, Scikit-Learn, Python, JupyterLab, Generative AI.</p>
+                            </div>
+                            
+                            <div class="timeline-item relative pl-8">
+                                <h4 class="text-xl font-medium text-purple-300">Machine Learning Engineer</h4>
+                                <p class="text-gray-400">ScaleFactor • Jun 2015 - Dec 2017</p>
+                                <p class="text-gray-300 mt-2">Developed and implemented algorithms and products for automating bookkeeping, financial forecasting, bill payments, tax completion, and other financial tasks.</p>
+                            </div>
+                            
+                            <div class="timeline-item relative pl-8">
+                                <h4 class="text-xl font-medium text-purple-300">Assistant Professor</h4>
+                                <p class="text-gray-400">DKTE, Maharashtra • Jul 2014 - May 2015</p>
+                                <p class="text-gray-300 mt-2">Teaching and research in Electronics & Communication Engineering.</p>
+                            </div>
+                            
+                            <div class="timeline-item relative pl-8">
+                                <h4 class="text-xl font-medium text-purple-300">Research Trainee (R & D)</h4>
+                                <p class="text-gray-400">Shreem Electric LTD, Maharashtra • Aug 2011 - Jul 2012</p>
+                                <p class="text-gray-300 mt-2">Research and development in the field of Electronics & Communication.</p>
+                            </div>                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gradient-to-br from-slate-900 to-purple-900/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">My Skills</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-2xl font-semibold text-white mb-6">Technical Skills</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-200 font-medium">Generative AI & LLMs</span>
+                                <span class="text-gray-400">95%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-3">
+                                <div class="skill-bar bg-gradient-to-r from-purple-500 to-cyan-500 h-3 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-200 font-medium">Agentic AI, LLM finetunning</span>
+                                <span class="text-gray-400">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-3">
+                                <div class="skill-bar bg-gradient-to-r from-purple-500 to-cyan-500 h-3 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-200 font-medium">AI & Machine Learning</span>
+                                <span class="text-gray-400">92%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-3">
+                                <div class="skill-bar bg-gradient-to-r from-purple-500 to-cyan-500 h-3 rounded-full" style="width: 92%"></div>
+                            </div>
+                        </div>
+            
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-200 font-medium">Evaluation & Monitoring</span>
+                                <span class="text-gray-400">87%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-3">
+                                <div class="skill-bar bg-gradient-to-r from-purple-500 to-cyan-500 h-3 rounded-full" style="width: 87%"></div>
+                            </div>
+                        </div>
+            
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-200 font-medium">Natural Language Processing & Data Science</span>
+                                <span class="text-gray-400">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-3">
+                                <div class="skill-bar bg-gradient-to-r from-purple-500 to-cyan-500 h-3 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+
+
+
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-200 font-medium">Computer Vision & Deep Learning</span>
+                                <span class="text-gray-400">88%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-3">
+                                <div class="skill-bar bg-gradient-to-r from-purple-500 to-cyan-500 h-3 rounded-full" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-200 font-medium">Cloud & Deployment</span>
+                                <span class="text-gray-400">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-3">
+                                <div class="skill-bar bg-gradient-to-r from-purple-500 to-cyan-500 h-3 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-2xl font-semibold text-white mb-6">Key Technologies</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <!-- Agentic AI -->
+                        <div class="skill-tag bg-white/10 p-4 rounded-xl hover:bg-purple-500/20 transition cursor-pointer glass-effect">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-robot text-purple-400 text-xl mr-2"></i>
+                                <span class="text-white font-medium">Agentic AI</span>
+                            </div>
+                            <p class="text-gray-400 text-sm">
+                                Code Frameworks: LangChain, Agno,CrewAI, LangGraph, Google-ADK, OpenAI SDK.<br>
+                                No-Code: Langflow, BedrockFlow, n8n.<br>
+                                Tool Calling: OpenAI Function Calling, Anthropic MCP, LangChain Tools.
+                            </p>
+                        </div>
+                       <!-- Generative AI -->
+                        <div class="skill-tag bg-white/10 p-4 rounded-xl hover:bg-pink-500/20 transition cursor-pointer glass-effect">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-paint-brush text-pink-400 text-xl mr-2"></i>
+                                <span class="text-white font-medium">Generative AI</span>
+                            </div>
+                            <p class="text-gray-400 text-sm">
+                                Text & Image Generation, Diffusion Models, GANs, VAEs, BERT, Transformer, ViT, Fine-tuning, Prompt Engineering
+                            </p>
+                        </div>
+
+                        <!-- LLMs -->
+                        <div class="skill-tag bg-white/10 p-4 rounded-xl hover:bg-indigo-500/20 transition cursor-pointer glass-effect">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-comments text-indigo-400 text-xl mr-2"></i>
+                                <span class="text-white font-medium">LLMs</span>
+                            </div>
+                            <p class="text-gray-400 text-sm">
+                                ChatGPT, LLaMA 2, Mistral 7B, Gemma 3, Vector DBs (ChromaDB, Pinecone), Vector Embeddings (Ollama, OpenAI, Hugging Face)
+                            </p>
+                        </div>
+
+                         <!-- LLM Fine-tuning -->
+                        <div class="skill-tag bg-white/10 p-4 rounded-xl hover:bg-purple-500/20 transition cursor-pointer glass-effect">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-brain text-pink-400 text-xl mr-2"></i>
+                                <span class="text-white font-medium">LLM Fine-tuning</span>
+                            </div>
+                            <p class="text-gray-400 text-sm">Unsloth, Hugging Face Transformers, LoRA, QLoRA, PEFT, custom dataset alignment</p>
+                        </div>
+
+                        <!-- Evaluation & Monitoring -->
+                        <div class="skill-tag bg-white/10 p-4 rounded-xl hover:bg-green-500/20 transition cursor-pointer glass-effect">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-clipboard-check text-green-400 text-xl mr-2"></i>
+                                <span class="text-white font-medium">Evaluation & Monitoring</span>
+                            </div>
+                            <p class="text-gray-400 text-sm">
+                                Ragas, W&B, Comet.ml, Model Performance Tracking, Gardrails & Hallucination Detection
+                            </p>
+                        </div>
+                    
+                        <!-- NLP & LLMs -->
+                        <div class="skill-tag bg-white/10 p-4 rounded-xl hover:bg-emerald-500/20 transition cursor-pointer glass-effect">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-comments text-green-400 text-xl mr-2"></i>
+                                <span class="text-white font-medium">Natural Language Processing & LLMs</span>
+                            </div>
+                            <p class="text-gray-400 text-sm">
+                                Text Classification, Named Entity Recognition, Summarization, Semantic Search, Q&A Systems.
+                            </p>
+                        </div>
+
+                        <!-- AI & Machine Learning -->
+                        <div class="skill-tag bg-white/10 p-4 rounded-xl hover:bg-pink-500/20 transition cursor-pointer glass-effect">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-brain text-pink-400 text-xl mr-2"></i>
+                                <span class="text-white font-medium">AI & Machine Learning</span>
+                            </div>
+                            <p class="text-gray-400 text-sm">
+                                Supervised (Classification, Regression), Unsupervised (PCA, K-means), Logistic Regression, SVM, Naïve Bayes, Decision Tree, Random Forest.
+                            </p>
+                        </div>
+
+                        <!-- Computer Vision -->
+                        <div class="skill-tag bg-white/10 p-4 rounded-xl hover:bg-orange-500/20 transition cursor-pointer glass-effect">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-eye text-emerald-400 text-xl mr-2"></i>
+                                <span class="text-white font-medium">Computer Vision</span>
+                            </div>
+                            <p class="text-gray-400 text-sm">
+                                OpenCV, TensorFlow, Image Segmentation, Object Detection.
+                            </p>
+                        </div>
+
+                        <!-- Cloud & Deployment -->
+                        <div class="skill-tag bg-white/10 p-4 rounded-xl hover:bg-blue-500/20 transition cursor-pointer glass-effect">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-cloud text-blue-400 text-xl mr-2"></i>
+                                <span class="text-white font-medium">Cloud & Deployment</span>
+                            </div>
+                            <p class="text-gray-400 text-sm">
+                                AWS, GCP, Azure, Amazon Bedrock, Google Vertex AI, Azure AI Foundry, Self-Hosted LLMs (Ollama, vLLM,
+                                LM Studio), Docker, Kubernetes,, EC2, on-prem GPU clusters.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16">
+                <h3 class="text-2xl font-semibold text-white mb-6">Tools & Frameworks</h3>
+                <div class="flex flex-wrap gap-3 justify-center">
+                    <div class="flex items-center bg-white/10 px-4 py-2 rounded-full shadow-sm glass-effect">
+                        <i class="fab fa-python text-yellow-400 text-xl mr-2"></i>
+                        <span class="text-gray-200">Python</span>
+                    </div>
+                    <div class="flex items-center bg-white/10 px-4 py-2 rounded-full shadow-sm glass-effect">
+                        <i class="fab fa-node-js text-green-500 text-xl mr-2"></i>
+                        <span class="text-gray-200">TensorFlow</span>
+                    </div>
+                    <div class="flex items-center bg-white/10 px-4 py-2 rounded-full shadow-sm glass-effect">
+                        <i class="fas fa-database text-purple-500 text-xl mr-2"></i>
+                        <span class="text-gray-200">PyTorch</span>
+                    </div>
+                    <div class="flex items-center bg-white/10 px-4 py-2 rounded-full shadow-sm glass-effect">
+                        <i class="fab fa-git-alt text-orange-500 text-xl mr-2"></i>
+                        <span class="text-gray-200">Git</span>
+                    </div>
+                    <div class="flex items-center bg-white/10 px-4 py-2 rounded-full shadow-sm glass-effect">
+                        <i class="fab fa-aws text-orange-400 text-xl mr-2"></i>
+                        <span class="text-gray-200">AWS</span>
+                    </div>
+                    <div class="flex items-center bg-white/10 px-4 py-2 rounded-full shadow-sm glass-effect">
+                        <i class="fab fa-google text-blue-400 text-xl mr-2"></i>
+                        <span class="text-gray-200">GCP</span>
+                    </div>
+                    <div class="flex items-center bg-white/10 px-4 py-2 rounded-full shadow-sm glass-effect">
+                        <i class="fab fa-microsoft text-blue-500 text-xl mr-2"></i>
+                        <span class="text-gray-200">Azure</span>
+                    </div>
+
+                    <div class="flex items-center bg-white/10 px-4 py-2 rounded-full shadow-sm glass-effect">
+                        <i class="fas fa-cogs text-indigo-400 text-xl mr-2"></i>
+                        <span class="text-gray-200">Docker</span>
+                    </div>
+                    <div class="flex items-center bg-white/10 px-4 py-2 rounded-full shadow-sm glass-effect">
+                        <i class="fas fa-network-wired text-purple-400 text-xl mr-2"></i>
+                        <span class="text-gray-200">Kubernetes</span>
+                    </div>
+                    <div class="flex items-center bg-white/10 px-4 py-2 rounded-full shadow-sm glass-effect">
+                        <i class="fas fa-server text-green-400 text-xl mr-2"></i>
+                        <span class="text-gray-200">EC2 / On-Prem GPU</span>
+                    </div>
+                    <div class="flex items-center bg-white/10 px-4 py-2 rounded-full shadow-sm glass-effect">
+                        <i class="fas fa-brain text-pink-400 text-xl mr-2"></i>
+                        <span class="text-gray-200">Hugging Face Transformers</span>
+                    </div>
+                    <div class="flex items-center bg-white/10 px-4 py-2 rounded-full shadow-sm glass-effect">
+                        <i class="fas fa-layer-group text-cyan-400 text-xl mr-2"></i>
+                        <span class="text-gray-200">LoRA / QLoRA / PEFT</span>
+                    </div>
+                    <div class="flex items-center bg-white/10 px-4 py-2 rounded-full shadow-sm glass-effect">
+                        <i class="fas fa-vector-square text-orange-400 text-xl mr-2"></i>
+                        <span class="text-gray-200">ChromaDB / Pinecone</span>
+                    </div>
+                    <div class="flex items-center bg-white/10 px-4 py-2 rounded-full shadow-sm glass-effect">
+                        <i class="fas fa-clipboard-check text-green-400 text-xl mr-2"></i>
+                        <span class="text-gray-200">W&B / Comet.ml</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="mt-16">
+                <h3 class="text-2xl font-semibold text-white mb-6">Agentic AI Tools & Frameworks</h3>
+                <div class="flex flex-wrap gap-3 justify-center">
+                    <div class="flex items-center bg-white/10 px-4 py-2 rounded-full shadow-sm glass-effect">
+                        <i class="fas fa-robot text-purple-400 text-xl mr-2"></i>
+                        <span class="text-gray-200">LangChain</span>
+                    </div>
+                    <div class="flex items-center bg-white/10 px-4 py-2 rounded-full shadow-sm glass-effect">
+                        <i class="fas fa-robot text-purple-400 text-xl mr-2"></i>
+                        <span class="text-gray-200">LangGraph</span>
+                    </div>
+                    <div class="flex items-center bg-white/10 px-4 py-2 rounded-full shadow-sm glass-effect">
+                        <i class="fas fa-robot text-purple-400 text-xl mr-2"></i>
+                        <span class="text-gray-200">CrewAI</span>
+                    </div>
+                    <div class="flex items-center bg-white/10 px-4 py-2 rounded-full shadow-sm glass-effect">
+                        <i class="fas fa-robot text-purple-400 text-xl mr-2"></i>
+                        <span class="text-gray-200">Agno</span>
+                    </div>
+                    <div class="flex items-center bg-white/10 px-4 py-2 rounded-full shadow-sm glass-effect">
+                        <i class="fas fa-code text-cyan-400 text-xl mr-2"></i>
+                        <span class="text-gray-200">OpenAI SDK</span>
+                    </div>
+                    <div class="flex items-center bg-white/10 px-4 py-2 rounded-full shadow-sm glass-effect">
+                        <i class="fas fa-code text-cyan-400 text-xl mr-2"></i>
+                        <span class="text-gray-200">Google ADK</span>
+                    </div>
+                    <div class="flex items-center bg-white/10 px-4 py-2 rounded-full shadow-sm glass-effect">
+                        <i class="fas fa-magic text-pink-400 text-xl mr-2"></i>
+                        <span class="text-gray-200">Langflow</span>
+                    </div>
+                    <div class="flex items-center bg-white/10 px-4 py-2 rounded-full shadow-sm glass-effect">
+                        <i class="fas fa-magic text-pink-400 text-xl mr-2"></i>
+                        <span class="text-gray-200">BerockFlow</span>
+                    </div>
+                    <div class="flex items-center bg-white/10 px-4 py-2 rounded-full shadow-sm glass-effect">
+                        <i class="fas fa-magic text-pink-400 text-xl mr-2"></i>
+                        <span class="text-gray-200">n8n</span>
+                    </div>
+                    <div class="flex items-center bg-white/10 px-4 py-2 rounded-full shadow-sm glass-effect">
+                        <i class="fas fa-tools text-green-400 text-xl mr-2"></i>
+                        <span class="text-gray-200">OpenAI Function Calling</span>
+                    </div>
+                    <div class="flex items-center bg-white/10 px-4 py-2 rounded-full shadow-sm glass-effect">
+                        <i class="fas fa-tools text-green-400 text-xl mr-2"></i>
+                        <span class="text-gray-200">Anthropic MCP</span>
+                    </div>
+                    <div class="flex items-center bg-white/10 px-4 py-2 rounded-full shadow-sm glass-effect">
+                        <i class="fas fa-tools text-green-400 text-xl mr-2"></i>
+                        <span class="text-gray-200">LangChain Tools</span>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+
+    
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Professional Experience</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="relative">
+                <!-- Vertical line -->
+                <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-purple-500 to-cyan-500"></div>
+                
+                <div class="space-y-12">
+                    <!-- Experience Item 1 -->
+                    <div class="relative flex items-center">
+                        <div class="hidden md:block w-1/2 pr-8 text-right">
+                            <div class="bg-white/10 p-6 rounded-2xl glass-effect">
+                                <h3 class="text-xl font-bold text-purple-300 mb-2">Lead Decision Scientist</h3>
+                                <p class="text-gray-400 mb-2">Winmore - Bangalore, India</p>
+                                <p class="text-gray-500 text-sm mb-4">Aug 2024 - Present</p>
+                                <p class="text-gray-300">Leading Generative AI applications with Text generation, Q&A, and LLMs on AWS cloud platform. Deployed and managed AI models using AWS Bedrock and Lambda.</p>
+                            </div>
+                        </div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-purple-500 rounded-full border-4 border-slate-900 z-10"></div>
+                        <div class="md:hidden w-full mt-8">
+                            <div class="bg-white/10 p-6 rounded-2xl glass-effect">
+                                <h3 class="text-xl font-bold text-purple-300 mb-2">Lead Decision Scientist</h3>
+                                <p class="text-gray-400 mb-2">Winmore - Bangalore, India</p>
+                                <p class="text-gray-500 text-sm mb-4">Aug 2024 - Present</p>
+                                <p class="text-gray-300">Leading Generative AI applications with Text generation, Q&A, and LLMs on AWS cloud platform. Deployed and managed AI models using AWS Bedrock and Lambda.</p>
+                            </div>
+                        </div>
+                        <div class="hidden md:block w-1/2 pl-8"></div>
+                    </div>
+                    
+                    <!-- Experience Item 2 -->
+                    <div class="relative flex items-center">
+                        <div class="hidden md:block w-1/2 pr-8"></div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-purple-500 rounded-full border-4 border-slate-900 z-10"></div>
+                        <div class="hidden md:block w-1/2 pl-8">
+                            <div class="bg-white/10 p-6 rounded-2xl glass-effect">
+                                <h3 class="text-xl font-bold text-purple-300 mb-2">Data Scientist</h3>
+                                <p class="text-gray-400 mb-2">Persistent Systems Limited - Pune, India</p>
+                                <p class="text-gray-500 text-sm mb-4">Feb 2023 - Aug 2024</p>
+                                <p class="text-gray-300">Developed Generative AI applications for clients with Text generation, Q&A, and Summarization on Azure. Worked on LLM fine-tuning and Langchain implementations.</p>
+                            </div>
+                        </div>
+                        <div class="md:hidden w-full mt-8">
+                            <div class="bg-white/10 p-6 rounded-2xl glass-effect">
+                                <h3 class="text-xl font-bold text-purple-300 mb-2">Data Scientist</h3>
+                                <p class="text-gray-400 mb-2">Persistent Systems Limited - Pune, India</p>
+                                <p class="text-gray-500 text-sm mb-4">Feb 2023 - Aug 2024</p>
+                                <p class="text-gray-300">Developed Generative AI applications for clients with Text generation, Q&A, and Summarization on Azure. Worked on LLM fine-tuning and Langchain implementations.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Experience Item 3 -->
+                    <div class="relative flex items-center">
+                        <div class="hidden md:block w-1/2 pr-8 text-right">
+                            <div class="bg-white/10 p-6 rounded-2xl glass-effect">
+                                <h3 class="text-xl font-bold text-purple-300 mb-2">Data Scientist</h3>
+                                <p class="text-gray-400 mb-2">Sony Research, India (SRI) - Bangalore</p>
+                                <p class="text-gray-500 text-sm mb-4">Aug 2022 - Feb 2023</p>
+                                <p class="text-gray-300">Developed chatbot frameworks with GPT-3.5 turbo integration. Filled two USA Patents in SRI and led research competitions.</p>
+                            </div>
+                        </div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-purple-500 rounded-full border-4 border-slate-900 z-10"></div>
+                        <div class="md:hidden w-full mt-8">
+                            <div class="bg-white/10 p-6 rounded-2xl glass-effect">
+                                <h3 class="text-xl font-bold text-purple-300 mb-2">Data Scientist</h3>
+                                <p class="text-gray-400 mb-2">Sony Research, India (SRI) - Bangalore</p>
+                                <p class="text-gray-500 text-sm mb-4">Aug 2022 - Feb 2023</p>
+                                <p class="text-gray-300">Developed chatbot frameworks with GPT-3.5 turbo integration. Filled two USA Patents in SRI and led research competitions.</p>
+                            </div>
+                        </div>
+                        <div class="hidden md:block w-1/2 pl-8"></div>
+                    </div>
+                    
+                    <!-- Experience Item 4 -->
+                    <div class="relative flex items-center">
+                        <div class="hidden md:block w-1/2 pr-8"></div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-purple-500 rounded-full border-4 border-slate-900 z-10"></div>
+                        <div class="hidden md:block w-1/2 pl-8">
+                            <div class="bg-white/10 p-6 rounded-2xl glass-effect">
+                                <h3 class="text-xl font-bold text-purple-300 mb-2">Doctoral Researcher (Ph.D)</h3>
+                                <p class="text-gray-400 mb-2">National Institute Of Technology, Goa, India</p>
+                                <p class="text-gray-500 text-sm mb-4">Jan 2021 - Jan 2023</p>
+                                <p class="text-gray-300">Developed algorithms for Image and Video Processing with Deep Learning. Published 5 novel image processing algorithms in SCI journals.</p>
+                            </div>
+                        </div>
+                        <div class="md:hidden w-full mt-8">
+                            <div class="bg-white/10 p-6 rounded-2xl glass-effect">
+                                <h3 class="text-xl font-bold text-purple-300 mb-2">Doctoral Researcher (Ph.D)</h3>
+                                <p class="text-gray-400 mb-2">National Institute Of Technology, Goa, India</p>
+                                <p class="text-gray-500 text-sm mb-4">Jan 2021 - Jan 2023</p>
+                                <p class="text-gray-300">Developed algorithms for Image and Video Processing with Deep Learning. Published 5 novel image processing algorithms in SCI journals.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Junior Research Fellow (Left side) -->
+                    <div class="relative flex items-center">
+                        <div class="hidden md:block w-1/2 pr-8 text-right">
+                            <div class="bg-white/10 p-6 rounded-2xl glass-effect">
+                                <h3 class="text-xl font-bold text-purple-300 mb-2">Junior Research Fellow (JRF)</h3>
+                                <p class="text-gray-400 mb-2">National Institute Of Technology, Goa, India</p>
+                                <p class="text-gray-500 text-sm mb-4">Jan 2018 - Jan 2020</p>
+                                <p class="text-gray-300">Image, Video Processing with Deep Neural Networks, CNNs, U-Net Architecture. Research work in Image and Video Processing using Machine Learning, Deep Learning, ViT, GAN & Latent Diffusion. Published SCI-indexed papers. Skills: Deep Learning, Machine Learning, CNNs, NLP, TensorFlow, Keras, OpenCV, Scikit-Learn, Python, JupyterLab, Generative AI.</p>
+                            </div>
+                        </div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-purple-500 rounded-full border-4 border-slate-900 z-10"></div>
+                        <div class="md:hidden w-full mt-8">
+                            <div class="bg-white/10 p-6 rounded-2xl glass-effect">
+                                <h3 class="text-xl font-bold text-purple-300 mb-2">Junior Research Fellow (JRF)</h3>
+                                <p class="text-gray-400 mb-2">National Institute Of Technology, Goa, India</p>
+                                <p class="text-gray-500 text-sm mb-4">Jan 2018 - Jan 2020</p>
+                                <p class="text-gray-300">Image, Video Processing with Deep Neural Networks, CNNs, U-Net Architecture. Research work in Image and Video Processing using Machine Learning, Deep Learning, ViT, GAN & Latent Diffusion. Published SCI-indexed papers. Skills: Deep Learning, Machine Learning, CNNs, NLP, TensorFlow, Keras, OpenCV, Scikit-Learn, Python, JupyterLab, Generative AI.</p>
+                            </div>
+                        </div>
+                        <div class="hidden md:block w-1/2 pl-8"></div>
+                    </div>
+
+                    <!-- Machine Learning Engineer (Right side) -->
+                    <div class="relative flex items-center">
+                        <div class="hidden md:block w-1/2 pr-8"></div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-purple-500 rounded-full border-4 border-slate-900 z-10"></div>
+                        <div class="hidden md:block w-1/2 pl-8">
+                            <div class="bg-white/10 p-6 rounded-2xl glass-effect">
+                                <h3 class="text-xl font-bold text-purple-300 mb-2">Machine Learning Engineer</h3>
+                                <p class="text-gray-400 mb-2">ScaleFactor</p>
+                                <p class="text-gray-500 text-sm mb-4">June 2015 - Dec 2017</p>
+                                <p class="text-gray-300">Developed and implemented algorithms for automating bookkeeping, financial forecasting, bill paying, tax completion, and other financial tasks.</p>
+                            </div>
+                        </div>
+                        <div class="md:hidden w-full mt-8">
+                            <div class="bg-white/10 p-6 rounded-2xl glass-effect">
+                                <h3 class="text-xl font-bold text-purple-300 mb-2">Machine Learning Engineer</h3>
+                                <p class="text-gray-400 mb-2">ScaleFactor</p>
+                                <p class="text-gray-500 text-sm mb-4">June 2015 - Dec 2017</p>
+                                <p class="text-gray-300">Developed and implemented algorithms for automating bookkeeping, financial forecasting, bill paying, tax completion, and other financial tasks.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Assistant Professor (Left side) -->
+                    <div class="relative flex items-center">
+                        <div class="hidden md:block w-1/2 pr-8 text-right">
+                            <div class="bg-white/10 p-6 rounded-2xl glass-effect">
+                                <h3 class="text-xl font-bold text-purple-300 mb-2">Assistant Professor</h3>
+                                <p class="text-gray-400 mb-2">DKTE, Maharashtra</p>
+                                <p class="text-gray-500 text-sm mb-4">July 2014 - May 2015</p>
+                                <p class="text-gray-300">Teaching and research in Electronics & Communication Engineering.</p>
+                            </div>
+                        </div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-purple-500 rounded-full border-4 border-slate-900 z-10"></div>
+                        <div class="md:hidden w-full mt-8">
+                            <div class="bg-white/10 p-6 rounded-2xl glass-effect">
+                                <h3 class="text-xl font-bold text-purple-300 mb-2">Assistant Professor</h3>
+                                <p class="text-gray-400 mb-2">DKTE, Maharashtra</p>
+                                <p class="text-gray-500 text-sm mb-4">July 2014 - May 2015</p>
+                                <p class="text-gray-300">Teaching and research in Electronics & Communication Engineering.</p>
+                            </div>
+                        </div>
+                        <div class="hidden md:block w-1/2 pl-8"></div>
+                    </div>
+
+                    <!-- Research Trainee (Right side) -->
+                    <div class="relative flex items-center">
+                        <div class="hidden md:block w-1/2 pr-8"></div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-purple-500 rounded-full border-4 border-slate-900 z-10"></div>
+                        <div class="hidden md:block w-1/2 pl-8">
+                            <div class="bg-white/10 p-6 rounded-2xl glass-effect">
+                                <h3 class="text-xl font-bold text-purple-300 mb-2">Research Trainee (R & D)</h3>
+                                <p class="text-gray-400 mb-2">Shreem Electric LTD, Maharashtra</p>
+                                <p class="text-gray-500 text-sm mb-4">Aug 2011 - July 2012</p>
+                                <p class="text-gray-300">Research and development in the field of Electronics & Communication.</p>
+                            </div>
+                        </div>
+                        <div class="md:hidden w-full mt-8">
+                            <div class="bg-white/10 p-6 rounded-2xl glass-effect">
+                                <h3 class="text-xl font-bold text-purple-300 mb-2">Research Trainee (R & D)</h3>
+                                <p class="text-gray-400 mb-2">Shreem Electric LTD, Maharashtra</p>
+                                <p class="text-gray-500 text-sm mb-4">Aug 2011 - July 2012</p>
+                                <p class="text-gray-300">Research and development in the field of Electronics & Communication.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gradient-to-br from-slate-900 to-purple-900/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Featured Projects</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="mb-8 flex justify-center">
+                <div class="inline-flex rounded-full shadow-sm" role="group">
+                    <button type="button" class="px-4 py-2 text-sm font-medium rounded-l-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
+                        All
+                    </button>
+                    <button type="button" class="px-4 py-2 text-sm font-medium bg-white/10 text-gray-200 hover:bg-white/20 rounded-r-full">
+                        AI Projects
+                    </button>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+            
+                <!-- Project 1 -->
+                <div class="project-card bg-white/10 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition glass-effect">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://1drv.ms/i/c/3b7c2c29ac9eddd9/IQTCf_2FCdwgSp_PG9s7OnMyAWvjrK2hQnZhYZEW1SVsHMo" 
+                            alt="AI-Powered Contract Intelligence" 
+                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">AI-Powered Contract Intelligence</h3>
+                        <p class="text-gray-300 mb-4">Fine-tuned LLMs with deep multi-modal document intelligence for contextual contract interpretation, clause extraction, and multi-hop reasoning—empowering real-time logistics decision-making.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="project-tag px-3 py-1 bg-emerald-500/20 text-emerald-300 text-xs rounded-full">LLMs</span>
+                            <span class="project-tag px-3 py-1 bg-emerald-500/20 text-emerald-300 text-xs rounded-full">Multi-Modal AI</span>
+                            <span class="project-tag px-3 py-1 bg-emerald-500/20 text-emerald-300 text-xs rounded-full">Agentic AI</span>
+                        </div>
+                        <div class="mt-4">
+                            <a href="#" onclick="document.getElementById('demo2').classList.toggle('hidden'); return false;"
+                            class="bg-white text-yellow-600 px-6 py-2 rounded-full font-medium hover:bg-yellow-600 hover:text-white transition">
+                            View live demo
+                            </a>
+                        </div>
+                        <div id="demo2" class="hidden mt-4">
+                            <div class="relative w-full pb-[56.25%]"> <!-- 16:9 Aspect Ratio -->
+                                <iframe 
+                                    src="https://www.youtube.com/embed/FyPD15GdUdc?si=-mDmSuO21jZlNqSj" 
+                                    title="YouTube video player"
+                                    class="absolute top-0 left-0 w-full h-full rounded-lg"
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                    referrerpolicy="strict-origin-when-cross-origin" 
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card bg-white/10 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition glass-effect">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://1drv.ms/i/c/3b7c2c29ac9eddd9/IQTkb3bHXT-aQJ4n_dRLn5-PAdhiSlaGfmc9crifTQEXpyg" 
+                            alt="AI Document Intelligence Platform" 
+                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">AI Document Intelligence Platform</h3>
+                        <p class="text-gray-300 mb-4">Self-supervised, multi-modal AI platform for high-accuracy logistics document processing, real-time insights, and natural language querying with amendment comparison and multilingual support.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="project-tag px-3 py-1 bg-emerald-500/20 text-emerald-300 text-xs rounded-full">Document AI</span>
+                            <span class="project-tag px-3 py-1 bg-emerald-500/20 text-emerald-300 text-xs rounded-full">Multimodal</span>
+                            <span class="project-tag px-3 py-1 bg-emerald-500/20 text-emerald-300 text-xs rounded-full">Conversational AI</span>
+                        </div>
+                        <div class="mt-4">
+                            <a href="#" onclick="document.getElementById('demo3').classList.toggle('hidden'); return false;"
+                            class="bg-white text-green-600 px-6 py-2 rounded-full font-medium hover:bg-green-600 hover:text-white transition">
+                            View live demo
+                            </a>
+                        </div>
+                        <div id="demo3" class="hidden mt-4">
+                            <div class="relative w-full pb-[56.25%]"> <!-- 16:9 Aspect Ratio -->
+                                <iframe 
+                                    src="https://www.youtube.com/embed/PDZQgFoQM7U?si=NDiWXzx1wILIfiIi" 
+                                    title="YouTube video player"
+                                    class="absolute top-0 left-0 w-full h-full rounded-lg"
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                    referrerpolicy="strict-origin-when-cross-origin" 
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card bg-white/10 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition glass-effect">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://1drv.ms/i/c/3b7c2c29ac9eddd9/IQSwCYc4pRScRphgmnPVWdwdAYCvZXf7wVhqiVMW8ek_968" 
+                            alt="UN/LOC Finder" 
+                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">AI Powered UN/LOC Finder</h3>
+                        <p class="text-gray-300 mb-4">Vector-powered UN/LOC code retrieval system using LLMs with priority-based selection logic, optimized for multimodal port and terminal identification.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="project-tag px-3 py-1 bg-blue-500/20 text-blue-300 text-xs rounded-full">LLMs</span>
+                            <span class="project-tag px-3 py-1 bg-blue-500/20 text-blue-300 text-xs rounded-full">Vector Search</span>
+                            <span class="project-tag px-3 py-1 bg-blue-500/20 text-blue-300 text-xs rounded-full">Maritime AI</span>
+                        </div>
+                        <div class="mt-4">
+                            <a href="#" onclick="document.getElementById('demo4').classList.toggle('hidden'); return false;"
+                            class="bg-white text-blue-600 px-6 py-2 rounded-full font-medium hover:bg-blue-600 hover:text-white transition">
+                            View live demo
+                            </a>
+                        </div>
+                        <div id="demo4" class="hidden mt-4">
+                            <div class="relative w-full pb-[56.25%]"> <!-- 16:9 Aspect Ratio -->
+                                <iframe 
+                                    src="https://www.youtube.com/embed/GJ2pfWcPHlE?si=prFa5E6zk5LeU-uu" 
+                                    title="UN/LOC Finder Demo"
+                                    class="absolute top-0 left-0 w-full h-full rounded-lg"
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                    referrerpolicy="strict-origin-when-cross-origin" 
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card bg-white/10 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition glass-effect">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://1drv.ms/i/c/3b7c2c29ac9eddd9/IQSFhjKQobHaSZ8EIhgcK8b0AUThGKeb_CsN69uqHd7IOTo" 
+                            alt="Logistic Harness Platform" 
+                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Logistic AI Test Harness Platform</h3>
+                        <p class="text-gray-300 mb-4">Centralized AI-driven logistics orchestration hub enabling automated booking validation, exception handling, and carrier data synchronization with scalable API integrations.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="project-tag px-3 py-1 bg-orange-500/20 text-orange-300 text-xs rounded-full">AI Automation</span>
+                            <span class="project-tag px-3 py-1 bg-orange-500/20 text-orange-300 text-xs rounded-full">Logistics Tech</span>
+                            <span class="project-tag px-3 py-1 bg-orange-500/20 text-orange-300 text-xs rounded-full">API Integration</span>
+                        </div>
+                        <div class="mt-4">
+                            <a href="#" onclick="document.getElementById('demo5').classList.toggle('hidden'); return false;"
+                            class="bg-white text-orange-600 px-6 py-2 rounded-full font-medium hover:bg-orange-600 hover:text-white transition">
+                            View live demo
+                            </a>
+                        </div>
+                        <div id="demo5" class="hidden mt-4">
+                            <div class="relative w-full pb-[56.25%]"> <!-- 16:9 Aspect Ratio -->
+                                <iframe 
+                                    src="https://www.youtube.com/embed/PA5Yxj3rKRI?si=vWmQKaEtT_pRjSkf" 
+                                    title="Logistic Harness Platform Demo"
+                                    class="absolute top-0 left-0 w-full h-full rounded-lg"
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                    referrerpolicy="strict-origin-when-cross-origin" 
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- Project 5 -->
+                <div class="project-card bg-white/10 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition glass-effect">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://placehold.co/600x400/8b5cf6/ffffff?text=GenAI+Project" 
+                            alt="PSLUS_Cisco CX Agile Program Delivery" 
+                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition">
+                            <a href="https://youtu.be/PDZQgFoQM7U" class="bg-white text-purple-600 px-6 py-2 rounded-full font-medium hover:bg-purple-600 hover:text-white transition view-project-btn">
+                                View Project
+                            </a>
+                        </div>
+                        
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">PSLUS_Cisco CX Agile Program Delivery</h3>
+                        <p class="text-gray-300 mb-4">Advanced GenAI-NLP based IC Automation for Network Engineers using RAG-LLMs and MongoDB integration.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="project-tag px-3 py-1 bg-emerald-500/20 text-emerald-300 text-xs rounded-full">GenAI-NLP</span>
+                            <span class="project-tag px-3 py-1 bg-emerald-500/20 text-emerald-300 text-xs rounded-full">RAG</span>
+                            <span class="project-tag px-3 py-1 bg-emerald-500/20 text-emerald-300 text-xs rounded-full">LLMs</span>
+                        </div>
+                        <div class="mt-4 flex justify-between items-center">
+                            <a href="https://github.com/tusharrasal" class="text-purple-300 hover:underline flex items-center">
+                                <i class="fab fa-github mr-2"></i> Source Code
+                            </a>
+                            <a href="https://youtu.be/PDZQgFoQM7U" class="text-gray-400 hover:text-purple-300 view-project-btn">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 7 -->
+                <div class="project-card bg-white/10 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition glass-effect">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://placehold.co/600x400/06b6d4/ffffff?text=Generative+AI" 
+                            alt="Talk to My Data" 
+                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition">
+                            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" 
+                            target="_blank"
+                            class="bg-purple-600 text-white px-6 py-2 rounded-full font-medium hover:bg-purple-700 transition view-project-btn">
+                                🎥 Watch Demo
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Talk to My Data</h3>
+                        <p class="text-gray-300 mb-4">Advanced GenAI-NLP based Customer Data Platform for question-answer system with custom context.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="project-tag px-3 py-1 bg-emerald-500/20 text-emerald-300 text-xs rounded-full">GPT-4</span>
+                            <span class="project-tag px-3 py-1 bg-emerald-500/20 text-emerald-300 text-xs rounded-full">Azure</span>
+                            <span class="project-tag px-3 py-1 bg-emerald-500/20 text-emerald-300 text-xs rounded-full">RAG</span>
+                        </div>
+                        <div class="mt-4 flex justify-between items-center">
+                            <a href="https://github.com/tusharrasal" class="text-purple-300 hover:underline flex items-center">
+                                <i class="fab fa-github mr-2"></i> Source Code
+                            </a>
+                            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" 
+                            target="_blank"
+                            class="text-gray-400 hover:text-purple-300 view-project-btn">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <!-- Project 8 -->
+                <div class="project-card bg-white/10 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition glass-effect">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://placehold.co/600x400/10b981/ffffff?text=Medical+Imaging" 
+                             alt="Fraud Detection for Insurance" 
+                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition">
+                            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="bg-white text-purple-600 px-6 py-2 rounded-full font-medium hover:bg-purple-600 hover:text-white transition view-project-btn">
+                                View Project
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Fraud Detection for Insurance</h3>
+                        <p class="text-gray-300 mb-4">Fraud prevention system analyzing discharge summaries and images to identify duplicates.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="project-tag px-3 py-1 bg-emerald-500/20 text-emerald-300 text-xs rounded-full">GCP</span>
+                            <span class="project-tag px-3 py-1 bg-emerald-500/20 text-emerald-300 text-xs rounded-full">OCR</span>
+                            <span class="project-tag px-3 py-1 bg-emerald-500/20 text-emerald-300 text-xs rounded-full">Computer Vision</span>
+                        </div>
+                        <div class="mt-4 flex justify-between items-center">
+                            <a href="https://github.com/tusharrasal" class="text-purple-300 hover:underline flex items-center">
+                                <i class="fab fa-github mr-2"></i> Source Code
+                            </a>
+                            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="text-gray-400 hover:text-purple-300 view-project-btn">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 9 -->
+                <div class="project-card bg-white/10 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition glass-effect">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://placehold.co/600x400/f59e0b/ffffff?text=Synthetic+Data" 
+                             alt="Infinite Synthetic Medical Imaging Data Generator" 
+                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition">
+                            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="bg-white text-purple-600 px-6 py-2 rounded-full font-medium hover:bg-purple-600 hover:text-white transition view-project-btn">
+                                View Project
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Infinite Synthetic Medical Imaging Data Generator</h3>
+                        <p class="text-gray-300 mb-4">Implemented 6 different types of GANs and integrated into single application for medical images.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="project-tag px-3 py-1 bg-emerald-500/20 text-emerald-300 text-xs rounded-full">GANs</span>
+                            <span class="project-tag px-3 py-1 bg-emerald-500/20 text-emerald-300 text-xs rounded-full">Medical Imaging</span>
+                            <span class="project-tag px-3 py-1 bg-emerald-500/20 text-emerald-300 text-xs rounded-full">Synthetic Data</span>
+                        </div>
+                        <div class="mt-4 flex justify-between items-center">
+                            <a href="https://github.com/tusharrasal" class="text-purple-300 hover:underline flex items-center">
+                                <i class="fab fa-github mr-2"></i> Source Code
+                            </a>
+                            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="text-gray-400 hover:text-purple-300 view-project-btn">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 10 -->
+                <div class="project-card bg-white/10 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition glass-effect">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://placehold.co/600x400/ef4444/ffffff?text=Radiology+Report" 
+                             alt="Radiological Report Generation" 
+                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition">
+                            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="bg-white text-purple-600 px-6 py-2 rounded-full font-medium hover:bg-purple-600 hover:text-white transition view-project-btn">
+                                View Project
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Radiological Report Generation</h3>
+                        <p class="text-gray-300 mb-4">Summarizing the X-ray in a form of radiology report Implemented with LLM (Vicuna).</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="project-tag px-3 py-1 bg-emerald-500/20 text-emerald-300 text-xs rounded-full">LLMs</span>
+                            <span class="project-tag px-3 py-1 bg-emerald-500/20 text-emerald-300 text-xs rounded-full">Image to Text</span>
+                            <span class="project-tag px-3 py-1 bg-emerald-500/20 text-emerald-300 text-xs rounded-full">Vicuna</span>
+                        </div>
+                        <div class="mt-4 flex justify-between items-center">
+                            <a href="https://github.com/tusharrasal" class="text-purple-300 hover:underline flex items-center">
+                                <i class="fab fa-github mr-2"></i> Source Code
+                            </a>
+                            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="text-gray-400 hover:text-purple-300 view-project-btn">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 11 -->
+                <div class="project-card bg-white/10 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition glass-effect">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://placehold.co/600x400/8b5cf6/ffffff?text=Medical+Imaging" 
+                             alt="Multimodality Translation (Brain MRI)" 
+                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition">
+                            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="bg-white text-purple-600 px-6 py-2 rounded-full font-medium hover:bg-purple-600 hover:text-white transition view-project-btn">
+                                View Project
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Multimodality Translation (Brain MRI)</h3>
+                        <p class="text-gray-300 mb-4">Implementation of different use cases of medical imaging domain for diagnosis.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="project-tag px-3 py-1 bg-emerald-500/20 text-emerald-300 text-xs rounded-full">MRI</span>
+                            <span class="project-tag px-3 py-1 bg-emerald-500/20 text-emerald-300 text-xs rounded-full">Medical Imaging</span>
+                            <span class="project-tag px-3 py-1 bg-emerald-500/20 text-emerald-300 text-xs rounded-full">Multimodal</span>
+                        </div>
+                        <div class="mt-4 flex justify-between items-center">
+                            <a href="https://github.com/tusharrasal" class="text-purple-300 hover:underline flex items-center">
+                                <i class="fab fa-github mr-2"></i> Source Code
+                            </a>
+                            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="text-gray-400 hover:text-purple-300 view-project-btn">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="https://github.com/tusharrasal" class="inline-block px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-full hover:from-purple-700 hover:to-indigo-700 transition shadow-lg hover:shadow-xl glow">
+                    View All Projects
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Certificates & Publications</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto rounded-full"></div>
+            </div>
+            <div class="certificate-card bg-white/10 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition glass-effect">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-certificate text-purple-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white">55+ Industry Certifications</h3>
+                    </div>
+                    <p class="text-gray-400 mb-4">Multiple Platforms • 2020-2025</p>
+                    <p class="text-gray-300 text-sm">Certified in Generative AI, Agentic AI, Data Science, Computer Vision, and Deep Learning through leading platforms and institutions including Google, AWS, Microsoft, Coursera, DeepLearning.AI, GCP, and Azure.
+
+                        For full details, please refer to the Licenses & Certifications section on my LinkedIn profile.</p>
+                    <div class="mt-4">
+                        <a href="https://www.linkedin.com/in/tushar-rasal-phd" class="text-purple-300 hover:underline text-sm">View All</a>
+                    </div>
+                </div>
+            </div>
+
+            
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <div class="certificate-card bg-white/10 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition glass-effect">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-book text-purple-400 text-xl"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-white">International SCI Indexed Publications</h3>
+                        </div>
+                        <p class="text-gray-400 mb-4">Research • 2022-2023</p>
+                        <p class="text-gray-300 text-sm">8+ SCI-indexed publications in deep learning, machine learning, and computer vision research.</p>
+                        <div class="mt-4">
+                            <a href="https://scholar.google.com/citations?hl=en&user=2nq7dBoAAAAJ" class="text-purple-300 hover:underline text-sm">View Publications</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="certificate-card bg-white/10 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition glass-effect">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-certificate text-purple-400 text-xl"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-white">Databricks ML Professional</h3>
+                        </div>
+                        <p class="text-gray-400 mb-4">Databricks • 2023</p>
+                        <p class="text-gray-300 text-sm">Certified Machine Learning Professional with expertise in MLOps and production deployment.</p>
+                        <div class="mt-4">
+                            <a href="https://credentials.databricks.com/16390dba-1c00-4ac5-bb99-38becf4768d0#acc.SLzNH4Jj" class="text-purple-300 hover:underline text-sm">View Certificate</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="certificate-card bg-white/10 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition glass-effect">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-graduation-cap text-purple-400 text-xl"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-white">Google Generative AI</h3>
+                        </div>
+                        <p class="text-gray-400 mb-4">Google • 2023</p>
+                        <p class="text-gray-300 text-sm">9 badges earned in Generative AI learning path including prompt engineering and model tuning.</p>
+                        <div class="mt-4">
+                            <a href="https://www.linkedin.com/in/tushar-rasal-phd" class="text-purple-300 hover:underline text-sm">View Certificate</a>
+                        </div>
+                    </div>
+                </div>
+                
+            
+                
+                <div class="certificate-card bg-white/10 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition glass-effect">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-patent text-purple-400 text-xl"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-white">US Patents</h3>
+                        </div>
+                        <p class="text-gray-400 mb-4">Sony Research • 2023</p>
+                        <p class="text-gray-300 text-sm">2 US Patents filed in AI-based haptic feedback and digital twin technologies.</p>
+                        <div class="mt-4">
+                            <a href="https://patents.google.com/?inventor=Tushar+Rasal" class="text-purple-300 hover:underline text-sm">View Patents</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="certificate-card bg-white/10 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition glass-effect">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-certificate text-purple-400 text-xl"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-white">AWS Cloud Practitioner</h3>
+                        </div>
+                        <p class="text-gray-400 mb-4">Amazon Web Services • 2022</p>
+                        <p class="text-gray-300 text-sm">Fundamental understanding of AWS Cloud concepts, services, and basic AWS architecture.</p>
+                        <div class="mt-4">
+                            <a href="https://www.linkedin.com/in/tushar-rasal-phd" class="text-purple-300 hover:underline text-sm">View Certificate</a>
+                        </div>
+                    </div>
+                </div>
+                
+             
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gradient-to-br from-slate-900 to-purple-900/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Get In Touch</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-semibold text-white mb-6">Contact Information</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <i class="fas fa-envelope text-purple-400 text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-medium text-white">Email</h4>
+                                <p class="text-gray-300">tusharoptimus@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <i class="fas fa-phone-alt text-purple-400 text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-medium text-white">Phone</h4>
+                                <p class="text-gray-300">+91-8446449696</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <i class="fas fa-map-marker-alt text-purple-400 text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-medium text-white">Location</h4>
+                                <p class="text-gray-300">Bangalore, India</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-12">
+                        <h3 class="text-2xl font-semibold text-white mb-6">Connect With Me</h3>
+                        <div class="flex space-x-6">
+                            <a href="https://www.linkedin.com/in/tushar-rasal-phd" class="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center shadow-md hover:shadow-lg transition hover:bg-purple-500/20 glass-effect">
+                                <i class="fab fa-linkedin-in text-gray-300 hover:text-purple-300 text-xl"></i>
+                            </a>
+                            <a href="https://github.com/tusharrasal" class="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center shadow-md hover:shadow-lg transition hover:bg-purple-500/20 glass-effect">
+                                <i class="fab fa-github text-gray-300 hover:text-purple-300 text-xl"></i>
+                            </a>
+                            <a href="#" class="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center shadow-md hover:shadow-lg transition hover:bg-purple-500/20 glass-effect">
+                                <i class="fab fa-twitter text-gray-300 hover:text-purple-300 text-xl"></i>
+                            </a>
+                            <a href="#" class="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center shadow-md hover:shadow-lg transition hover:bg-purple-500/20 glass-effect">
+                                <i class="fab fa-kaggle text-gray-300 hover:text-purple-300 text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-12">
+                        <h3 class="text-2xl font-semibold text-white mb-6">My Availability</h3>
+                        <div class="bg-white/10 rounded-2xl p-6 glass-effect">
+                            <div class="flex items-center mb-4">
+                                <div class="w-3 h-3 bg-green-500 rounded-full mr-3 animate-pulse"></div>
+                                <span class="text-gray-200 font-medium">Available for new opportunities</span>
+                            </div>
+                            <p class="text-gray-300 text-sm">
+                                I'm currently open to consulting projects, collaborations, and speaking engagements. Feel free to reach out!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-2xl font-semibold text-white mb-6">Send Me a Message</h3>
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Your Name</label>
+                                <input type="text" id="name" name="name" class="w-full px-4 py-3 rounded-lg border border-white/20 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 bg-white/10 text-white transition glass-effect">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Your Email</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-lg border border-white/20 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 bg-white/10 text-white transition glass-effect">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-300 mb-1">Subject</label>
+                            <input type="text" id="subject" name="subject" class="w-full px-4 py-3 rounded-lg border border-white/20 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 bg-white/10 text-white transition glass-effect">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Message</label>
+                            <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 rounded-lg border border-white/20 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 bg-white/10 text-white transition glass-effect"></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" class="w-full px-6 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-lg hover:from-purple-700 hover:to-indigo-700 transition shadow-lg hover:shadow-xl glow">
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chatbot Widget -->
+    <div id="chatbot-container" class="fixed bottom-8 right-8 z-50">
+        <div id="chatbot-toggle" class="w-16 h-16 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full flex items-center justify-center shadow-xl hover:shadow-2xl cursor-pointer transition glow">
+            <i class="fas fa-robot text-white text-2xl"></i>
+        </div>
+        
+        <div id="chatbot-window" class="hidden absolute bottom-20 right-0 w-80 h-96 bg-white/10 backdrop-blur-md rounded-t-xl rounded-l-xl shadow-2xl overflow-hidden flex flex-col glass-effect border border-white/20">
+            <div class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-4 flex justify-between items-center">
+                <h3 class="font-semibold">AI Assistant</h3>
+                <button id="chatbot-close" class="text-white hover:text-gray-200">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div id="chatbot-messages" class="flex-grow p-4 overflow-y-auto">
+                <div class="mb-4">
+                    <div class="bg-white/20 rounded-lg p-3 inline-block max-w-xs">
+                        <p class="text-gray-200">Hi there! I'm Dr. Tushar Rasal's AI assistant. How can I help you today?</p>
+                    </div>
+                </div>
+                <div class="mb-4 text-right">
+                    <div class="bg-purple-500/30 rounded-lg p-3 inline-block max-w-xs">
+                        <p class="text-gray-200">Tell me about your projects</p>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <div class="bg-white/20 rounded-lg p-3 inline-block max-w-xs">
+                        <p class="text-gray-200">I've worked on several AI projects including Generative AI applications, medical imaging solutions, and synthetic data generation. You can find them in the Projects section!</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="p-3 border-t border-white/20">
+                <div class="flex">
+                    <input type="text" id="chatbot-input" placeholder="Type your message..." class="flex-grow px-3 py-2 rounded-l-lg border border-white/20 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 bg-white/10 text-white">
+                    <button id="chatbot-send" class="px-4 py-2 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-r-lg hover:from-purple-700 hover:to-indigo-700 transition">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <div class="mt-2 flex flex-wrap gap-1">
+                    <button class="chatbot-quick-question px-2 py-1 bg-white/20 text-gray-200 text-xs rounded-full hover:bg-white/30 transition">
+                        Skills?
+                    </button>
+                    <button class="chatbot-quick-question px-2 py-1 bg-white/20 text-gray-200 text-xs rounded-full hover:bg-white/30 transition">
+                        Experience?
+                    </button>
+                    <button class="chatbot-quick-question px-2 py-1 bg-white/20 text-gray-200 text-xs rounded-full hover:bg-white/30 transition">
+                        Contact?
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900/80 text-gray-400 py-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-white text-lg font-semibold mb-4 gradient-text">Dr. Tushar Rasal</h3>
+                    <p class="mb-4">A showcase of my work, skills, and professional journey as a Lead Data Scientist & AI Researcher.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.linkedin.com/in/tushar-rasal-phd" class="text-gray-400 hover:text-purple-300 transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/tusharrasal" class="text-gray-400 hover:text-purple-300 transition">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-purple-300 transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-purple-300 transition">
+                            <i class="fab fa-kaggle"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-white text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="hover:text-purple-300 transition">Home</a></li>
+                        <li><a href="#about" class="hover:text-purple-300 transition">About</a></li>
+                        <li><a href="#skills" class="hover:text-purple-300 transition">Skills</a></li>
+                        <li><a href="#experience" class="hover:text-purple-300 transition">Experience</a></li>
+                        <li><a href="#projects" class="hover:text-purple-300 transition">Projects</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white text-lg font-semibold mb-4">Expertise</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-purple-300 transition">Generative AI</a></li>
+                        <li><a href="#" class="hover:text-purple-300 transition">Large Language Models</a></li>
+                        <li><a href="#" class="hover:text-purple-300 transition">Computer Vision</a></li>
+                        <li><a href="#" class="hover:text-purple-300 transition">Deep Learning</a></li>
+                        <li><a href="#" class="hover:text-purple-300 transition">Cloud AI Services</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white text-lg font-semibold mb-4">Stay Updated</h3>
+                    <p class="mb-4">Subscribe to get updates on my latest projects and research.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-3 py-2 rounded-l-lg focus:outline-none text-gray-800 w-full">
+                        <button type="submit" class="px-4 py-2 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-r-lg hover:from-purple-700 hover:to-indigo-700 transition">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-white/10 mt-8 pt-8 text-center">
+                <p>&copy; 2024 Dr. Tushar Rasal. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-4 right-4 md:bottom-8 md:right-8 w-12 h-12 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-full shadow-lg hover:from-purple-700 hover:to-indigo-700 transition hidden z-40 glow">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- YouTube Modal -->
+    <div id="youtube-modal" class="fixed inset-0 bg-black/80 z-50 flex items-center justify-center hidden">
+        <div class="relative w-full max-w-4xl mx-4">
+            <button id="close-youtube-modal" class="absolute -top-12 right-0 text-white text-3xl">&times;</button>
+            <div class="aspect-w-16 aspect-h-9">
+                <iframe id="youtube-iframe" class="w-full h-96 md:h-[500px]" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Dark mode toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+        const html = document.documentElement;
+
+        // Check for saved user preference or use system preference
+        if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+            document.querySelector('#theme-toggle i').classList.remove('fa-moon');
+            document.querySelector('#theme-toggle i').classList.add('fa-sun');
+            document.querySelector('#theme-toggle-mobile i').classList.remove('fa-moon');
+            document.querySelector('#theme-toggle-mobile i').classList.add('fa-sun');
+        } else {
+            html.classList.remove('dark');
+            document.querySelector('#theme-toggle i').classList.remove('fa-sun');
+            document.querySelector('#theme-toggle i').classList.add('fa-moon');
+            document.querySelector('#theme-toggle-mobile i').classList.remove('fa-sun');
+            document.querySelector('#theme-toggle-mobile i').classList.add('fa-moon');
+        }
+
+        // Toggle theme
+        function toggleTheme() {
+            html.classList.toggle('dark');
+            localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+            
+            // Update icons
+            if (html.classList.contains('dark')) {
+                document.querySelector('#theme-toggle i').classList.remove('fa-moon');
+                document.querySelector('#theme-toggle i').classList.add('fa-sun');
+                document.querySelector('#theme-toggle-mobile i').classList.remove('fa-moon');
+                document.querySelector('#theme-toggle-mobile i').classList.add('fa-sun');
+            } else {
+                document.querySelector('#theme-toggle i').classList.remove('fa-sun');
+                document.querySelector('#theme-toggle i').classList.add('fa-moon');
+                document.querySelector('#theme-toggle-mobile i').classList.remove('fa-sun');
+                document.querySelector('#theme-toggle-mobile i').classList.add('fa-moon');
+            }
+        }
+
+        themeToggle.addEventListener('click', toggleTheme);
+        themeToggleMobile.addEventListener('click', toggleTheme);
+
+        // Animate skill bars on scroll
+        function animateSkillBars() {
+            const skillBars = document.querySelectorAll('.skill-bar');
+            skillBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 100);
+            });
+        }
+
+        // Intersection Observer for skill bars animation
+        const skillsSection = document.getElementById('skills');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateSkillBars();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        observer.observe(skillsSection);
+
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Chatbot functionality
+        const chatbotToggle = document.getElementById('chatbot-toggle');
+        const chatbotWindow = document.getElementById('chatbot-window');
+        const chatbotClose = document.getElementById('chatbot-close');
+        const chatbotMessages = document.getElementById('chatbot-messages');
+        const chatbotInput = document.getElementById('chatbot-input');
+        const chatbotSend = document.getElementById('chatbot-send');
+        const quickQuestions = document.querySelectorAll('.chatbot-quick-question');
+
+        chatbotToggle.addEventListener('click', () => {
+            chatbotWindow.classList.toggle('hidden');
+        });
+
+        chatbotClose.addEventListener('click', () => {
+            chatbotWindow.classList.add('hidden');
+        });
+
+        function addBotMessage(message) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('mb-4');
+            messageDiv.innerHTML = `
+                <div class="bg-white/20 rounded-lg p-3 inline-block max-w-xs">
+                    <p class="text-gray-200">${message}</p>
+                </div>
+            `;
+            chatbotMessages.appendChild(messageDiv);
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+        }
+
+        function addUserMessage(message) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('mb-4', 'text-right');
+            messageDiv.innerHTML = `
+                <div class="bg-purple-500/30 rounded-lg p-3 inline-block max-w-xs">
+                    <p class="text-gray-200">${message}</p>
+                </div>
+            `;
+            chatbotMessages.appendChild(messageDiv);
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+        }
+
+        function handleUserInput(input) {
+            addUserMessage(input);
+            chatbotInput.value = '';
+            
+            // Simple chatbot responses
+            setTimeout(() => {
+                let response;
+                const lowerInput = input.toLowerCase();
+                
+                if (lowerInput.includes('hello') || lowerInput.includes('hi')) {
+                    response = "Hello there! I'm Dr. Tushar Rasal's AI assistant. How can I help you today?";
+                } else if (lowerInput.includes('project') || lowerInput.includes('work')) {
+                    response = "Dr. Rasal has worked on various AI projects including Generative AI applications, medical imaging solutions, and synthetic data generation. You can find them all in the Projects section of his portfolio!";
+                } else if (lowerInput.includes('skill') || lowerInput.includes('expert')) {
+                    response = "Dr. Rasal's skills include Generative AI, LLMs, Computer Vision, Deep Learning, and Cloud AI Services. He has 9.5+ years of experience and 55+ industry certifications. Check out the Skills section for a detailed breakdown.";
+                } else if (lowerInput.includes('contact') || lowerInput.includes('reach')) {
+                    response = "You can contact Dr. Rasal via email at tusharoptimus@gmail.com or use the contact form in the Contact section. He's available for consulting projects and collaborations!";
+                } else if (lowerInput.includes('experience') || lowerInput.includes('job')) {
+                    response = "Dr. Rasal has 9.5+ years of experience as a Lead Data Scientist, working with companies like Winmore, Persistent Systems, and Sony Research. See the Experience section for his full work history.";
+                } else if (lowerInput.includes('certification') || lowerInput.includes('certificate')) {
+                    response = "Dr. Rasal has 55+ industry certifications in Generative AI, Data Science, Computer Vision, and Deep Learning from Google, AWS, Coursera, and Databricks. He's also a published researcher with multiple patents.";
+                } else if (lowerInput.includes('thank')) {
+                    response = "You're welcome! Is there anything else I can help you with?";
+                } else {
+                    response = "I'm Dr. Tushar Rasal's AI assistant. You can ask me about his projects, skills, experience, certifications, or how to contact him.";
+                }
+                
+                addBotMessage(response);
+            }, 1000);
+        }
+
+        chatbotSend.addEventListener('click', () => {
+            const message = chatbotInput.value.trim();
+            if (message) {
+                handleUserInput(message);
+            }
+        });
+
+        chatbotInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                const message = chatbotInput.value.trim();
+                if (message) {
+                    handleUserInput(message);
+                }
+            }
+        });
+
+        quickQuestions.forEach(button => {
+            button.addEventListener('click', () => {
+                const question = button.textContent.trim();
+                handleUserInput(question);
+            });
+        });
+
+        // Cursor trail effect
+        const cursorTrail = document.getElementById('cursor-trail');
+        let mouseX = 0, mouseY = 0;
+        let trailX = 0, trailY = 0;
+        const delay = 5;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        function updateCursorTrail() {
+            trailX += (mouseX - trailX) / delay;
+            trailY += (mouseY - trailY) / delay;
+            
+            cursorTrail.style.left = trailX + 'px';
+            cursorTrail.style.top = trailY + 'px';
+            
+            requestAnimationFrame(updateCursorTrail);
+        }
+
+        updateCursorTrail();
+
+        // Initialize particles.js
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#8b5cf6"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": true,
+                    "anim": {
+                        "enable": true,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": true,
+                        "speed": 2,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#8b5cf6",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 1,
+                    "direction": "none",
+                    "random": true,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "grab"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 140,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+
+        // Add floating animation to all project cards
+        document.querySelectorAll('.project-card').forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.1}s`;
+        });
+
+        // YouTube modal functionality
+        const youtubeModal = document.getElementById('youtube-modal');
+        const youtubeIframe = document.getElementById('youtube-iframe');
+        const closeYoutubeModal = document.getElementById('close-youtube-modal');
+        const viewProjectButtons = document.querySelectorAll('.view-project-btn');
+
+        viewProjectButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                const youtubeUrl = this.getAttribute('href');
+                if (youtubeUrl && youtubeUrl.includes('youtube.com')) {
+                    const videoId = youtubeUrl.split('v=')[1];
+                    const embedUrl = `https://www.youtube.com/embed/${videoId}`;
+                    youtubeIframe.src = embedUrl;
+                    youtubeModal.classList.remove('hidden');
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    window.open(youtubeUrl, '_blank');
+                }
+            });
+        });
+
+        closeYoutubeModal.addEventListener('click', () => {
+            youtubeModal.classList.add('hidden');
+            youtubeIframe.src = '';
+            document.body.style.overflow = 'auto';
+        });
+
+        youtubeModal.addEventListener('click', (e) => {
+            if (e.target === youtubeModal) {
+                youtubeModal.classList.add('hidden');
+                youtubeIframe.src = '';
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !youtubeModal.classList.contains('hidden')) {
+                youtubeModal.classList.add('hidden');
+                youtubeIframe.src = '';
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Form submission
+        const contactForm = document.querySelector('form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message! I will get back to you soon.');
+                this.reset();
+            });
+        }
+    </script>
+</body>
+</html>
